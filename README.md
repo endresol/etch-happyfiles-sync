@@ -58,3 +58,11 @@ wp etch-happyfiles-sync status     # both trees, positions, file counts, twin id
 2026-11-17 on Local site `etch-kit-test` (Etch 1.7.1, HappyFiles Pro 1.9.1): core-function suite (17
 checks), Etch's REST endpoints as the builder calls them, and HappyFiles' own AJAX handlers (create,
 move file, rename, move folder, delete).
+
+## Installing / releasing
+
+Run `./build-zip.sh`. It zips the committed files (so commit first) into
+`dist/etch-happyfiles-sync-<version>.zip`, with the plugin inside an `etch-happyfiles-sync/` folder as
+WordPress expects. Upload that in **Plugins > Add New > Upload Plugin**. Each version's zip is also
+attached to its GitHub release (`v<version>`). To release a new version, bump `Version:` in the plugin
+header, commit, build, and `gh release create v<version> dist/<zip>`.
